@@ -326,6 +326,8 @@ class Brauhaus.Recipe extends Brauhaus.OptionConstructor
 
       if spice.aa and spice.use.toLowerCase() is 'boil'
         @ibu += spice.bitterness @ibuMethod, earlyOg, @batchSize
+      else if spice.aa and spice.use.toLowerCase() is 'steep'
+        @ibu += spice.bitterness @ibuMethod, this.og, @batchSize
 
       # Update recipe price with spice
       @price += spice.price()
